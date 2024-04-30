@@ -25,11 +25,17 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.kafka:spring-kafka'
+
+	testImplementation group: 'org.testcontainers', name: 'kafka', version: '1.19.7'
+	testImplementation group: 'org.springframework.kafka', name: 'spring-kafka-test', version: '3.1.4'
+	testImplementation 'org.projectlombok:lombok:1.18.22'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	runtimeOnly 'com.mysql:mysql-connector-j'
 }
 
 tasks.named('test') {
